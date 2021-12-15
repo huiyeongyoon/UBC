@@ -1,0 +1,35 @@
+<html>
+  <body>
+    콜백함수 - 커피
+  </body>
+</html>
+
+<script>
+
+  // 커피를 사는 행위 하는 함수
+  // 콜백: 함수를 매개변수로 받는 것
+  function buyCoffee(coffeeName, price, quantity, callback1, callback2) {
+    console.log(`${coffeeName}를 ${quantity} 구입하려 합니다`);
+    console.log(`${coffeeName} 한 개 ${price}원 입니다.`);
+    
+    setTimeout(()=>{
+      callback1(price * quantity);
+      callback2(quantity);
+    }, 1000)
+
+    // return 이 생략되서 14~16번째줄이 나중에 실행 된다
+  }
+
+  // 커피값 계산 결과를 출력하는 함수
+  function pay(money) {
+    console.log(money, '원을 지불 하였습니다');
+  }
+
+  function quantity(num) {
+    console.log(`주문하신 수량은, ${num} 개 입니다.`);
+  }
+
+  // 안에서 파라미터를 사용 하기 때문에 ()를 붙이지 않는다
+  buyCoffee('카라멜 마끼야또', 5000, 3, pay, quantity);
+
+</script>

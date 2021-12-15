@@ -1,0 +1,20 @@
+<html>
+  <body>
+    콜백함수
+  </body>
+</html>
+<script>
+
+  // setTimeout 메서드는 매개변수 첫번째에 콜백함수가 들어간다
+  // 콜백함수
+  const wait_count = (callback) => {
+    console.log('ONE');
+    setTimeout(()=>{
+      console.log('TWO');
+      callback();
+    }, 1000)
+  }
+
+  const count3 = () => console.log('THREE');
+  wait_count(count3);
+</script>

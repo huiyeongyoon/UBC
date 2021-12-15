@@ -1,0 +1,40 @@
+<html>
+  <body>
+    Ajax
+  </body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  // axios.get("https://www.zerocho.com/api/get")
+  // .then((result) => {
+  //   console.log(result);
+  //   console.log(result.data);
+  // })
+  // .catch((err) => {
+  //   console.log(error);
+  // })
+(
+  async() => {
+    try {
+      const result = await axios.post('https://www.zerocho.com/api/post/json', 
+    { // body 
+      name: 'zerocho',
+      birth: 1994,
+    }
+)
+    console.log(result);
+    console.log(result.data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+)()
+
+
+
+
+
+
+
+
+</script>

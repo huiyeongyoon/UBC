@@ -1,0 +1,36 @@
+<html>
+  <body>
+    콜백함수 - 콜백 지옥
+  </body>
+</html>
+
+<script>
+  // const func = (name) => {
+  //   console.log(name);
+  // }
+  // name = '윤희영'
+  // 1번인자  콜백함수
+  // 2번인자  시간
+  // 3번인자  콜백함수 인자 (파라미터값)
+  // setTimeout(func, 1000, '윤희영');
+  
+  setTimeout(
+    (name) => {
+      let ramenList = name
+      console.log(ramenList);
+      setTimeout((name) => {
+        ramenList += ', ' + name;
+        console.log(ramenList);
+        setTimeout((name) => {
+            ramenList += ', ' + name;
+            console.log(ramenList);
+            setTimeout((name) => {
+              ramenList += ', ' +name;
+              console.log(ramenList);
+            }, 500, '삼양라면')
+        }, 500, '불닭볶음면')
+      }, 500, '신라면');
+    }, 500, '꼬꼬면');
+
+
+</script>

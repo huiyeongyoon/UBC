@@ -1,0 +1,26 @@
+<html>
+  <body>
+    this  
+  </body>
+</html>
+
+<script>
+  var value = 1;
+
+  var obj = {
+    value: 100,
+    foo: function() {
+      console.log("foo's this:", this);
+      console.log("foo's this.value: ", this.value);
+      // 함수안에 함수를 넣어서 this를 사용하면  
+      // var사용시 최상위의 this 즉 윈도우를 가르킨다
+      function bar() {
+      console.log("bar's this:", this);
+      console.log("bar's this.value ", this.value);
+    }
+    bar();
+  }
+}
+
+obj.foo()
+</script>

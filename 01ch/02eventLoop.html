@@ -1,0 +1,31 @@
+<html>
+  <body>
+    이벤트 루프
+  </body>
+</html>
+
+<script>
+
+  // const foo = () => console.log('first');
+
+  // const bar = () => setTimeout(() => console.log('second'), 500);
+
+  // const baz = () => console.log('third');
+  
+  // bar();
+  // foo();
+  // baz();
+  
+  const run = () => {
+    console.log('3초 후 실행');
+  }
+
+  console.log('시작');
+  // setTimeout 함수는 앞부분에 콜백함수를 넣어준다
+  // 뒤에 부분에 시간을 넣어준다
+  setTimeout(run, 3000); 
+  console.log('끝');
+
+
+
+</script>

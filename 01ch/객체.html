@@ -1,0 +1,42 @@
+<!-- 4. 객체
+- 객체 person에 이름(name), 나이(age), 생일(birthday) 속성 추가하기
+- 객체 person에 "객체안에 함수"을 반환하는 함수 func 추가하기
+- 객체 person에 숫자 1, 2, 3이 들어있는 배열 array 속성 추가하기
+- 객체 person에 객체 ob 안에 name 속성에 "객체안에 객체" 문자열(string) 넣기
+- 객체 person 프린트하기
+
+- 객체 person의 속성 name 프린트하기
+- 객체 person의 속성 age 프린트하기
+- 객체 person의 속성 birthday 프린트하기
+
+- 객체 person의 속성 array 0번째 인덱스 값 프린트하기
+- 객체 person의 속성 array 1번째 인덱스 값 프린트하기
+- 객체 person의 속성 array 2번째 인덱스 값 프린트하기
+
+- 객체 person의 속성 func 프린트하기
+- 객체 person의 속성 ob 프린트하기
+- 객체 person의 속성 ob의 name 프린트하기 -->
+
+<script>
+  const person = { 
+    name: 'huiyeong',
+    age: 31,
+    birthday: '11월10일',
+    func: func = () => {
+      return '객체안에 함수'
+    },
+    array: [1,2,3],
+    ob: {name: '객체안에 객체'}
+  }
+  console.log(person);
+
+  console.log(person.name);
+  console.log(person.age);
+  console.log(person.birthday);
+  console.log(person.array[0]);
+  console.log(person.array[1]);
+  console.log(person.array[2]);
+  console.log(person.func());
+  console.log(person.ob);
+  console.log(person.ob.name);
+</script>

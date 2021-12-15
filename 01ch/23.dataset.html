@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  데이터셋
+  <ul>
+    <!-- data-원하는 데이터값 명  -->
+    <li id='1' data-id='1' data-user-job='programmer'>Zero</li>
+    <li id='2' data-id='2' data-user-job='designer'>Nero</li>
+    <li id='3' data-id='3' data-user-job='programmer'>Hero</li>
+    <li id='4' data-id='4' data-user-job='ceo'>Kero</li>
+  </ul>
+</body>
+</html>
+<script>
+  console.log(document.getElementById('2').dataset);
+  console.log(document.getElementById('1').dataset);
+  console.log(document.getElementById('3').textContent);
+  // 동적 사용
+  setTimeout( ()=> {
+    document.getElementById('1').textContent = 'Mero';
+  },1000)
+  document.getElementById('4').dataset.monthSalary = 10000;
+  console.log(document.getElementById('4').dataset);
+</script>

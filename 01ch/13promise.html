@@ -1,0 +1,65 @@
+<html>
+  <body>
+    프라미스 객체
+  </body>
+</html>
+<script>
+  const addRamen = (name, prevName) => {
+    return new Promise((resolve) => {
+      setTimeout(()=> {
+        let newName = '';
+        if(prevName) {
+          newName = `${prevName}, ${name}`;
+        } else {
+          newName = name;
+        }
+        console.log(newName);
+        resolve(newName);
+      }, 500)
+    })
+  }
+  addRamen('삼양라면')
+    .then(ramenList => addRamen('신라면', ramenList))
+    .then(ramenList => addRamen('진라면', ramenList))
+    .then(ramenList => addRamen('너구리', ramenList))
+
+  // let ramenList = '삼양라면'
+  // new Promise((resolve)=>{
+  //   let ramenList = '삼양라면'
+  //   setTimeout(()=>{
+  //     resolve(ramenList)
+  //   }, 500)
+  // })
+  // .then((ramenList)=>{
+  //   console.log(ramenList)
+  //   ramenList += ', ' + '진라면'
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(ramenList) //삼양라면, 진라면
+  //     }, 500);      
+  //   })
+  // })
+  // .then((ramenList)=> {
+  //   console.log(ramenList)
+  //   ramenList += ', ' + '신라면'
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(ramenList)
+  //     }
+  //     , 500);
+  //   })
+  // })
+  // .then((ramenList) => {
+  //   console.log(ramenList)
+  //   ramenList += ', ' + '너구리라면'
+  //   return new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(ramenList)
+  //     }
+  //     , 500);
+  //   })
+  // })
+  // .then((result) => {
+  //   console.log(result)
+  // })
+</script>

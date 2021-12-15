@@ -1,0 +1,55 @@
+<!-- 타이머
+  - "1초 걸리는 타이머 입니다."를 1초 후에 출력하는 타이머를 만든다.
+  - 타이머 콜백함수에 파라메터 num을 설정하고, num에 1을 받아서 1초 후에 출력해본다.
+  
+  - 타이머 콜백함수에 파라메터 string를 설정하고, string에 "안녕!"을 받아서 0.5초 후에 출력해본다.
+  - 타이머 콜백함수에 파라메터 coffee, price를 설정하고, "제가 좋아하는 커피 (coffee)는 (price)원 입니다. "라는 문자열을 1초 후, 출력한다. 
+    (coffee에 좋아하는 커피를 넣으세요, 가격은 아무 숫자나 넣으세요) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+
+  const coffee = '아메리카노';
+  const price = 5000;
+  const num = () => console.log(1);
+  const hi  = () => console.log('안녕!');
+
+  const timer = () => {
+    setTimeout(()=> {
+        console.log('1초 걸리는 타이머 입니다');
+    }, 1000)
+  }
+
+  const timer2 = (callback) => {
+    setTimeout(()=> {
+        callback();
+    }, 1000)
+  }
+
+  const timer3 = (callback) => {
+    setTimeout(()=> {
+        callback();
+    }, 500)
+  }
+
+  const favorite = (coffee, price) => {
+    setTimeout(()=> {
+      console.log(`제가 좋아하는 커피 ${coffee}는 ${price}원 입니다.`);
+    }, 1000)
+  }
+
+  timer();
+  timer2(num);
+  timer3(hi);
+  favorite(coffee, price);
+</script>

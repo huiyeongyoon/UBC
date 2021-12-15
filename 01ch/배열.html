@@ -1,0 +1,41 @@
+<!-- 3. 배열
+- 변수 arr1에 숫자 1, 2, 3, 4를 초기화하기
+- 변수 arr1 콘솔에 프린트하기
+- 변수 arr1에 숫자 5 추가하기
+- 변수 arr1 콘솔에 프린트하기
+- 변수 arr1 맨마지막 아이템 제거하기
+- 변수 arr1 콘솔에 프린트하기
+
+- 변수 arr2에 숫자 5, 6, 7, 8를 초기화하기
+- 변수 arr2 콘솔에 프린트하기
+- 변수 arr2에 숫자 9 추가하기
+- 변수 arr2 콘솔에 프린트하기
+- 변수 arr2 맨마지막 아이템 제거하기
+- 변수 arr2 콘솔에 프린트하기
+
+- 변수 arr3에 arr1, arr2 이어붙인 값 초기화하기
+- 변수 arr3 콘솔에 프린트하기
+- 변수 arr4에 arr2, arr1 이어붙인 값 초기화하기
+- 변수 arr4 콘솔에 프린트하기 -->
+
+<script>
+  const arr1 = [1,2,3,4];
+  const arr2 = [5,6,7,8];
+  
+  console.log(arr1);
+  arr1.push(5);
+  console.log(arr1);
+  arr1.pop();
+  console.log(arr1);
+  
+  console.log(arr2);
+  arr2.push(9);
+  console.log(arr2);
+  arr2.pop();
+  console.log(arr2);
+  const arr3 = arr1.concat(arr2)
+  console.log(arr3);
+  const arr4 = arr2.concat(arr1)
+  console.log(arr4);
+
+</script>

@@ -1,0 +1,39 @@
+<html>
+  <body>
+    오브젝트
+  </body>
+</html>
+
+<script>
+  const person = {
+    firstName: 'Huiyeong',
+    lastName: 'Yoon',
+    age: '31',
+    birthday: '91/11/10',
+    array: ['배열도','들어가','지고'],
+    func: a = () => {
+        
+      return '함수도되고';
+    },
+    obj: {obj: '객체도 들어가지고'}
+  }
+
+  // 방법1: object.key
+  // 방법2: object.['key'] 
+  console.log(person.firstName);
+  console.log(person.lastName);
+  console.log(person.age);
+  console.log(person['birthday']);
+  console.log(person.array[0]);
+  console.log(person.func(a));
+  console.log(person.obj.obj);
+
+
+  // 객체에 속성 property 추가
+  person['data'] = 1;
+  person.data1 = 3;
+  const es = 'ES';
+  person[es+6] = 'Fantastic';
+
+  console.log(person);
+</script>

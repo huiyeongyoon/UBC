@@ -1,0 +1,51 @@
+<html>
+  <body>
+    구조 분해할당
+  </body>
+</html>
+
+<script>
+  const array = ['Baram,','lee'];
+  // const firstName = array[0]
+  // const lastName =  array[1]
+
+  const [firstName, lastName, initial] = array;
+
+  console.log('firstName:', firstName);
+  console.log('lastName:', lastName);
+  console.log('initial', initial);
+
+
+  const options = {
+    title: 'home',
+    width: 300,
+    height: 500,
+  }
+
+  // const title = option.title;
+  // const width = option.width;
+  // const height = option.height;
+
+  const {title, width, height} = options
+  console.log(title);
+  console.log(width);
+  console.log(height);
+
+
+  let family = {
+    grandmother:'Harrison',
+    sister: 'Ethan',
+    brother: 'Austin',
+  }
+  
+// sister에 변수이름을 baby로 바꾼다
+// 새로운 속성을 추가할떄 grnasdfather = ''
+const {grandmother, sister:baby, brother, grandfather = '할아버지'} = family
+
+console.log(grandmother);
+console.log(baby);
+console.log(brother);
+console.log(grandfather);
+
+
+</script>

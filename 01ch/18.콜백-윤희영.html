@@ -1,0 +1,54 @@
+
+<html>
+  <body>
+    콜백
+  </body>
+</html>
+<script>
+  //아래 함수 wait_count, count3를 사용하여 
+  //ONE, TWO, THREE가 순서대로 출력하게 콜백함수를 써서 해결해보자
+  const wait_count = (callback) => {
+    console.log('ONE')
+    setTimeout(() => {
+      console.log('TWO')
+      callback()
+    }, 1000);
+  }
+  const count3 = () => console.log('THREE');
+
+  //문자 데이터 함수 다가능
+  const func1 = (num, callback) => {
+    callback(num * 5);
+    setTimeout(() => {
+      console.log('TWO');
+    },1000)
+  }
+
+  const func2 = (num5) => {
+    console.log(`func2에서 num*5를 받았습니다 ${num5}`);
+  }
+
+  // 함수이름만 써줘도 되는 이유는 callback이 함수 이기떄문이다
+  
+  func1(10, func2);
+
+  const buyBurger = (burgerName, price, quantity, isLarge, callback) => {
+
+    console.log(`${burgerName} 를 ${quantity} 구입하려 합니다`);
+    console.log(`${burgerName} 한개는 ${price}원 입니다`);
+    if (isLarge) {
+      console.log('감자와 콜라는 라지로 하겠습니다');
+    }
+    callback(price * quantity);
+    setTimeout( ()=> {
+      console.log('햄버거값 계산 완료 했습니다');
+    },1000) 
+  }
+
+  const pay = (money) => {
+      console.log(`${money}원을 지불하였습니다`);
+  }
+
+  buyBurger('불고기버거', 3000, 5, false, pay);
+
+</script>

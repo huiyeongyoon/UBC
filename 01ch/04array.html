@@ -1,0 +1,37 @@
+<html>
+  <body>
+    배열
+  </body>
+</html>
+<script>
+
+
+const array1 = new Array();
+console.log('1번 방법 배열', array1);
+
+const array2 = new Array('1','2','3','4');
+// array2에 0번째 데이터를 수정한다
+array2[0] = '10';
+// array2에 맨뒤에 문자열 데이터5를 추가한다
+array2.push('5');
+array2.pop();
+// array2에 맨뒤에 문자열 데이터을 삭제한다
+console.log('2번 방법 배열', array2);
+
+const array3 = [];
+console.log('3번 방법 배열', array3);
+
+const array4 = ['1','2','3','4'];
+console.log('4번 방법 배열', array4);
+console.log('배열 인덱스 0:', array4[0]);
+console.log('배열 인덱스 1:', array4[1]);
+console.log('배열 인덱스 2:', array4[2]);
+console.log('배열 인덱스 3:', array4[3]);
+
+
+const array5 = ['1', '2', '3'];
+const array6 = ['apple','samsung','xiaomi'];
+const array7 = array5.concat(array6);
+console.log(array7);
+</script>
+

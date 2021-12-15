@@ -1,0 +1,44 @@
+<html>
+  <body>
+    
+  </body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+
+(
+  async() => {
+    try {
+    const formData = new FormData();
+    formData.append('name', 'zerocho');
+    formData.append('birth', 1994);
+    const result = await axios.post('https://www.zerocho.com/api/post/formdata', {})
+    console.log(result);
+    console.log(result.data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+)()
+
+// formData.append('name', 'zerocho'); // 객체처럼 selecting
+  // formData.append('item', 'orange');
+  // formData.append('item', 'melon');
+  // formData.has('item'); // true
+  // formData.has('money');
+  // formData.get('item');
+  // formData.getAll('item');
+  // formData.append('item',['hi','zero']);
+  // formData.get('test');
+  // formData.delete('test');
+  // formData.get('test');
+  // formData.set('item', 'apple'); // 초기화후 재 할당
+  // formData.getAll('item');
+
+  // console.log('삭제 전', formData.getAll('item'));
+
+  // formData.delete('item');
+  // console.log('삭제 후', formData.getAll('item'));
+
+</script>

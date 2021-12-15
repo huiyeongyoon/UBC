@@ -1,0 +1,22 @@
+<html>
+  <body>
+    프로미스 객체
+  </body>
+</html>
+
+<script>
+
+  new Promise((resolve)=> {
+    resolve('data');
+  })
+  .then((res) => {
+    return new Promise((resolve) => {
+      setTimeout(()=> {
+        console.log(res);
+      },500);
+    })
+  })
+  .then((res) => {
+    return res;
+  })
+</script>

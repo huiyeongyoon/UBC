@@ -1,0 +1,43 @@
+<!-- 2. 함수
+- 콘솔에 "함수 func1 입니다."를 프린트하는 함수 func1 만들기 (function으로 정의)
+- 함수 func1 호출하기
+- "함수 func2 입니다"를 반환(return)하는 함수 func2 만들기 (변수 = funtion으로 정의)
+- 함수 func2 콘솔에 프린트하기
+- 숫자20을 반환(return)하는 함수 func3 만들기 (화살표 함수로 정의)
+- 숫자10을 반환(return)하는 함수 func4 만들기 (화살표 함수로 정의)
+- 함수 func3, func4를 더한 값을 콘솔에 찍어보기
+- 함수 func3, func4를 뺀 값을 반환하는 함수 func5 만들기 (화살표 함수로 정의)
+- 함수 func5 콘솔에 프린트하기 -->
+
+<script>
+function func1() {}
+
+const func2 = function func2() {
+  return '함수 func2 입니다';
+}
+
+func3 = () => {
+  return 20;
+}
+
+func4 = () => {
+  return 10;
+}
+
+let a = func3();
+let b = func4();
+
+func5 = (a, b) => {
+
+   return a - b;
+}
+
+
+console.log(func1());
+console.log(func2());
+console.log(func3());
+console.log(func4());
+console.log(func3() + func4());
+console.log(func5(a,b));
+
+</script>
