@@ -1,6 +1,0 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-/ ignore all files in any directory named node_modules/
