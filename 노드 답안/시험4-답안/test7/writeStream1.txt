@@ -1,0 +1,1 @@
+writeStream.txt로 보낼꺼에여

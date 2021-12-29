@@ -1,0 +1,79 @@
+<!-- 
+  1. 변하지 않는 상수로 num1에 10을 초기화한다.
+  2. 변수 num2에 10을 초기화한다.
+  3. 변수 num2에 30을 할당한다.
+  4. num1과 num2를 차례대로 프린트한다.
+  5. num1과 num2를 곱한 값을 프린트한다.
+  6. 변하지 않는 상수로 str1에 문자열 "자바스크립트"를 초기화한다.
+  7. 변하지 않는 상수로 str2에 문자열 "너무 재밌네요"를 초기화한다.
+  8. str1, str2를 더한값을 프린트한다.
+  9. str1, str2를 차례대로 프린트한다.
+  10. 함수 myFavorite를 파라메터 name, favorite로 설정하고,
+      문자열 `나 (name)은 (favorite)를 좋아합니다.` 를 리턴하게 한다.
+  11. 변하지 않는 상수 str3에 알맞는 파라메터의 값을 넣은 함수 myFavorite를 호출한 결과를 넣는다.
+  12. str3을 프린트한다.
+  13. 함수 addNumber를 파라메터 a, b로 설정하고 두개를 더한 값을 반환한다.
+  14. 함수 subNumber를 파라메터 a, b로 설정하고 두개를 뺀값을 반환한다.
+  15. 함수 divNumber를 파라메터 a, b로 설정하고 두개를 나눈값을 반환한다.
+  16. 함수 multiNumber를 파라메터 a, b로 설정하고 두개를 곱한값을 반환한다.
+  17. 함수 addmultiNumber를 파라메터 a, b로 설정하고 두 파라메터를 
+      addNumber, multiNumber 함수의 값 (a, b)로 넣고, 두 함수를 더한 값을 반환한다.
+  17. addNumber에 값을 (1, 2)를 넣고, 프린트한다.
+  18. subNumber를에 값을 (20, 10)를 넣고, 프린트한다.
+  19. divNumber에 값을 (40, 5)를 넣고, 프린트한다.
+  20. multiNumber에 값을 (3, 333)를 넣고, 프린트한다.
+  21. addmultiNumber에 값을 (10, 20)을 넣고 프린트한다.
+  -->
+<html>
+  <body>
+    변수, 함수
+  </body>
+</html>
+<script>
+  const num1 = 10;
+  let num2 = 10;
+  num2 = 30;
+
+  console.log(num1, num2);
+  console.log(num1 * num2);
+
+  const str1 = '자바스크립트';
+  const str2 = '너무 재밌네요';
+  
+  console.log(str1 + str2);
+  console.log(str1, str2);
+
+  const myFavorite = (name, favorite) => {
+    return `나 ${name}은 ${favorite}을 좋아합니다`;
+  };
+
+  const str3 = myFavorite('장수환', '라면');
+
+  console.log(str3);
+
+  const addNumber = (a, b) => {
+    return a + b
+  };
+
+  const subNumber = (a, b) => {
+    return a - b;
+  };
+
+  const divNumber = (a, b) => {
+    return a / b;
+  };
+
+  const multiNumber = (a, b) => {
+    return a * b;
+  };
+
+  const addmultiNumber = (a, b) => {
+    return addNumber(a, b) + multiNumber(a, b);
+  };
+
+  console.log(addNumber(1, 2));
+  console.log(subNumber(20, 10));
+  console.log(divNumber(40, 5));
+  console.log(multiNumber(3, 333));
+  console.log(addmultiNumber(10, 20));
+</script>

@@ -1,0 +1,62 @@
+<!-- 
+  1. ONE, TWO, THREE 차례대로 출력문제 (코드 참조)
+  2. 파라메터 num, callback을 설정하고, 콜백함수에 num * 5를 파라메터로 받는 함수 func1을 만든다
+  3. 파라메터 num5를 설정하고,  "func2에서 num * 5를 받았습니다 (num5)" 를 출력하는 함수 func2를 만든다
+  4. 위에서 만든 함수 func1에 10, func2를 값으로 넣어서 호출한다.  
+  5. 위에서 만든 함수 func1에서 콜백을 1초 후에 실행하도록 수정한다. (수정한 부분은 주석처리)
+  6. func1 함수를 호출한다
+  7. bugerName, price, quantity, isLarge, callback를 파라메터로 설정하는 buyBuger함수를 만든다
+  8. buyBuger 함수안에 "(bugerName)를 (quantity)개 구입하려 합니다."를 출력하는 부분을 만듭니다.
+  9. buyBuger 함수안에 "(bugerName) 한 개는 (price)원 입니다."를 출력하는 부분을 만듭니다.
+  10. buyBuger 함수안에 if를 사용해서 isLarge가 true일때, "감자와 콜라는 라지로 하겠습니다" 를 출력하는 부분을 만듭니다.
+  11. buyBuger 함수안에 1초후에 "햄버거값 계산 완료했습니다."가 출력되는 타이머를 만듭니다.
+  12. money를 파라메터로 설정하는 pay 함수를 만듭니다.
+  13. pay 함수안에 "(money)원을 지불하였습니다."를 출력하는 부분을 만듭니다.
+  14. buyBuger안에 계산을 기다리고, 돈을 지불하게 하는 콜백함수를 만듭니다.
+  15. buyBuger 함수를 호출합니다. (bugerName, price, quantity, isLarge는 아무거나, callback부분은 pay함수를 사용)
+-->
+<html>
+  <body>
+    콜백
+  </body>
+</html>
+<script>
+  //아래 함수 wait_count, count3를 사용하여 
+  //ONE, TWO, THREE가 순서대로 출력하게 콜백함수를 써서 해결해보자
+  const wait_count = () => {
+    console.log('ONE')
+    setTimeout(() => {
+      console.log('TWO')
+    }, 1000);
+  }
+  const count3 = () => console.log('THREE')
+
+  const func1 = (num, callback) => {
+    // callback(num * 5)
+    setTimeout(() => {
+      callback(num * 5)
+    }, 1000);
+  } 
+  const func2 = (num5) => {
+    console.log(`func2에서 num * 5를 받았습니다. ${num5}`)
+  }
+  func1(10, func2)
+
+  //buyBuger 문제
+  const buyBuger = (bugerName, price, quantity, isLarge, callback) => {
+    console.log(`${bugerName}를 ${quantity}개 구입하려합니다.`)
+    console.log(`${bugerName} 한 개는 ${price}원 입니다.`)
+    if (isLarge) console.log("감자와 콜라는 라지로 하겠습니다.")  
+    setTimeout(() => {
+      console.log("햄버거값 계산 완료했습니다.")
+      callback(price * quantity)
+    }, 1000);
+  }
+  const pay = (money) => {
+    console.log(`${money}원을 지불하였습니다.`)
+  }
+  
+  //buyBuger(햄버거이름, 가격, 수량, true 또는 false, pay)
+  buyBuger("치즈버거", 5000, 2, true, pay)
+
+</script>

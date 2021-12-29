@@ -1,0 +1,47 @@
+<!-- 
+  1. 'https://jsonplaceholder.typicode.com/todos' 주소를 axios get으로 실행해서 결과를 받아봅시다.
+  2. 네이버(https://naver.com)를 axios get으로 실행해서 데이터를 받아봅시다.
+  3. 쿠팡(https://www.coupang.com/)를 axios get으로 실행해서 데이터를 받아봅시다.
+  4. 'https://www.zerocho.com/api/post/json' 주소를 axios post로 실행해서 데이터를 보내고, 결과를 받아봅시다. 
+    (post로 보낼 데이터 name:본인이름, birth:본인생일, favorite:좋아하는 것)
+  5. 'https://www.zerocho.com/api/search/노드' 에서 한글로되어 있는 '노드' 부분을 encode하고,
+     axios get으로 실행해서 결과를 받아봅시다.
+ -->
+
+<html>
+  <body>
+    Ajax
+  </body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  axios.get('https://jsonplaceholder.typicode.com/todos')
+    .then(res => {
+      console.log(res)
+      console.log(res.data)
+    })
+  axios.get('https://naver.com')
+    .then(res => {
+      console.log(res)
+      console.log(res.data)
+    })
+  axios.get('https://www.coupang.com/')
+    .then(res => {
+      console.log(res)
+      console.log(res.data)
+    })
+  axios.post('https://www.zerocho.com/api/post/json', {
+    name: '장수환',
+    birth: '91/07/20',
+    favorite: '치킨'
+  })
+    .then(res => {
+      console.log(res)
+      console.log(res.data)
+    })
+  axios.get(`https://www.zerocho.com/api/search/${encodeURIComponent('노드')}`)
+    .then(res => {
+      console.log(res)
+      console.log(res.data)
+    })
+</script>

@@ -1,0 +1,29 @@
+<!-- 
+  1. li 태그에 순서대로 id를 추가해봅니다. (값은 위에서부터 1,2,3,4)
+  2. li 태그에 순서대로 data-language를 추가해봅니다. (값은 위에서부터 2개는 english, 2개는 korean)
+  3. id가 1인 li 태그의 dataset을 불러와서 출력해봅니다.
+  4. id가 2인 li 태그의 dataset을 불러와서 출력해봅니다.
+  5. id가 3인 li 태그의 dataset을 불러와서 출력해봅니다.
+  6. id가 4인 li 태그의 dataset을 불러와서 출력해봅니다.
+  7. id가 4인 li 태그의 textContent를 불러와서 출력해봅니다.
+  8. id가 4인 li 태그의 textContent에 '힘내요'를 값으로 넣어봅니다.
+ -->
+<html>
+  <body>
+    dataset
+  </body>
+</html>
+<ul>
+  <li id='1' data-language='english'>Meta</li>
+  <li id='2' data-language='english'>Camp</li>
+  <li id='3' data-language='korean'>여러분</li>
+  <li id='4' data-language='korean'>화이팅</li>
+</ul>
+<script>
+  console.log(document.getElementById('1').dataset)
+  console.log(document.getElementById('2').dataset)
+  console.log(document.getElementById('3').dataset)
+  console.log(document.getElementById('4').dataset)
+  console.log(document.getElementById('4').textContent)
+  document.getElementById('4').textContent = '힘내요'
+</script>

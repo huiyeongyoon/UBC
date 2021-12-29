@@ -1,0 +1,32 @@
+<!-- 
+  1. 'https://jsonplaceholder.typicode.com/todos' 주소를 axios get으로 실행해서 결과를 받아봅시다.
+  2. 1번에서 받은 결과(then으로 받은 결과)의 0번 인덱스를 불러와서 반환하여 다음 then에서 출력한다.
+  3. 2번에서 받은 결과(then으로 받은 결과)의 키가 "title"인 아이템의 밸류값을 프린트한다.  
+  4. 2번에서 받은 결과(then으로 받은 결과)를 axios post('https://www.zerocho.com/api/post/json')로 보내고 결과를 프린트한다.
+  -->
+
+<html>
+  <body>
+    Ajax
+  </body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  axios.get("https://jsonplaceholder.typicode.com/todos")
+  .then((result) => {
+    console.log(result)
+    console.log(result.data)
+    return result.data[0];
+  })
+  .then((data) => {
+    console.log(data);
+    return data
+  })
+  .then((data) => {
+    console.log(data.title);
+    axios.post('https://www.zerocho.com/api/post/json', data)
+      .then(result => {
+        console.log(result.data)
+      })
+  })
+</script>

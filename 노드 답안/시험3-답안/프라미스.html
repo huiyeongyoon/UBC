@@ -1,0 +1,63 @@
+<!-- 
+  1. 프라미스 객체를 만들고 "화이팅"을 리졸브한다.
+  2. 다음 then에 들어온 데이터를 프린트하고, "여러분 (데이터)"를 반환한다.
+  3. 다음 then에 들어온 데이터를 프린트한다.
+  4. 프라미스 객체를 return 하는 함수 promise를 만들고 함수 파라메터는 num로 만든다.
+      또한, 파라메터 num을 리졸브 해야한다.
+  5. promise 함수를 이용하여 ONE, TWO, THREE를 1초씩 차례대로 프린트하게 호출해라.
+  6. 프라미스 객체를 return 하는 함수 promise1를 만들고 함수 파라메터는 num, prevNum로 만든다.
+      또한, 두개의 파라메터를 조합하여 "prevNum, num"를 리졸브하게 한다. 
+  7. promise 함수를 이용하여 ONE, TWO, THREE를 1초씩 누적되게 프린트하게 만들어라.
+    출력 예시)
+    ONE
+    ONE, TWO
+    ONE, TWO, THREE
+  -->
+<html>
+  <body>
+    프라미스
+  </body>
+</html>
+<script>
+  new Promise((resolve) => {
+    resolve('화이팅');
+  })
+  .then((result) => {
+    console.log(result)
+    return `여러분 ${result}`
+  })
+  .then((data) => {
+    console.log(data);
+  });
+
+  const promise = (num) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log(num)
+        resolve(num)
+      }, 1000);
+    })
+  }
+  promise('ONE')
+    .then(() => promise('TWO'))
+    .then(() => promise('THREE'))
+
+  const promise1 = (num, prevNum) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        let newNum = '';
+        if(prevNum){
+          newNum = `${prevNum}, ${num}`;
+        } else {
+          newNum = num;
+        };
+        console.log(newNum);
+        resolve(newNum);
+      }, 1000);
+    });
+  };
+
+  promise1('ONE')
+    .then(prevNumber => promise1('TWO', prevNumber))
+    .then(prevNumber => promise1('THREE', prevNumber));
+</script>

@@ -1,0 +1,52 @@
+<!-- 
+  1. 이름이 formData인 변수에 FormData 객체를 만들어서 담아봅시다.
+  2. formData에 키가 name, 밸류가 <본인이름>인 데이터를 추가해봅시다.
+  3. formData에서 키가 name인 값을 get으로 불러와서 출력해봅시다.
+  4. formData에서 키가 name인 값을 getAll로 불러와서 출력해봅시다.
+  5. formData에 키가 fruit, 밸류가 orange인 데이터를 추가해봅시다.
+  6. formData에 키가 fruit, 밸류가 melon인 데이터를 추가해봅시다.
+  7. formData에 키가 fruit, 밸류가 apple인 데이터를 추가해봅시다.
+  8. formData에서 키가 fruit인 값을 get으로 불러와서 출력해봅시다.
+  9. formData에서 키가 fruit인 값을 getAll로 불러와서 출력해봅시다.
+  10. formData에서 키가 test인 값이 있는지 has로 확인해봅시다.
+  11. formData에 키가 test, 밸류가 배열 ['hi', 'hello', '안녕']인 데이터를 추가해봅시다.
+  12. formData에서 키가 test인 값이 있는지 has로 확인해봅시다.
+  13. formData에서 키가 test인 값을 get으로 불러와서 출력해봅시다.
+  14. formData에서 키가 test인 값을 getAll로 불러와서 출력해봅시다.
+  15. formData에서 키가 test인 값을 delete로 삭제해봅시다.
+  16. formData에서 키가 test인 값을 get으로 불러와서 출력해봅시다.
+  17. formData에서 키가 fruit인 값을 set으로 수정해봅시다.(수정할 밸류는 watermelon)
+  18. formData에서 키가 fruit인 값을 getAll로 불러와서 출력해봅시다.
+  19. https://www.zerocho.com/api/post/formdata 주소를 axios post로 실행해서 데이터를 보내고, 결과를 받아봅시다.
+      ( 이름이 axiosformData 변수에 FormData 객체로 만들고, 
+       키가 'body' 밸류가 ['데이터1', '데이터2']인 데이터를 추가해서 post로 보냄! ) 
+-->
+<html>
+  <body>
+    FormData
+  </body>
+</html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const formData = new FormData()
+  formData.append('name','장수환')
+  console.log(formData.get('name'))
+  console.log(formData.getAll('name'))
+  formData.append('fruit','orange')
+  formData.append('fruit','melon')
+  formData.append('fruit','apple')
+  console.log(formData.get('fruit'))
+  console.log(formData.getAll('fruit'))
+  console.log(formData.has('test'))
+  formData.append('test', ['hi', 'hello', '안녕'])
+  console.log(formData.has('test'))
+  console.log(formData.get('test'))
+  console.log(formData.getAll('test'))
+  const axiosformData = new FormData()
+  axiosformData.append('body', ['데이터1', '데이터2'])
+  axios.post('https://www.zerocho.com/api/post/formdata', axiosformData)
+    .then(res=> {
+      console.log(res)
+      console.log(res.data)
+    })
+</script>

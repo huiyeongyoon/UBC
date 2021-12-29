@@ -1,0 +1,33 @@
+<!-- 
+  1. 숫자 1을 반환(return)하는 함수 func1을 만든다 (function으로 만들기)
+  2. func1을 콘솔에 프린트한다
+  3. 숫자 5를 반환(return)하는 함수 func2를 만든다 (화살표 함수 만들기)
+  4. func2를 콘솔에 프린트한다
+  5. 파라메터 x, y가 있고, 설정한 파라메터 두 개를 더해서 반환하는 함수 func3를 만든다
+  6. func3 함수에 func1과 func2를 값으로 받아서 콘솔에 프린트한다
+ -->
+<html>
+  <body>
+    함수
+  </body>
+</html>
+<script>
+  function func1() {
+    return 1
+  }
+  console.log(func1())
+  
+  const func2 = () => {
+    return 5
+  }
+  console.log(func2())
+
+  const func3 = (x, y) => {
+    return x + y
+  }
+
+  console.log(func3(func1(), func2()))
+
+
+
+</script>

@@ -1,0 +1,44 @@
+<!-- 
+1. 함수 func1에, 파라메터 num, callback을 설정하고, 
+   콜백함수 callback에 (num * 5)를 넣는다.
+2. 함수 echoNumber에, 파라메터 num을 설정하고, num을 프린트하게 한다.
+3. 함수 func1에 (원하는 숫자, echoNumber)를 값으로 넣어서 호출한다.
+4. 함수 func2에, 파라메터 num, callback1, callback2를 설정하고,
+   콜백함수 callback1에 (num * 10), callback2에 (num + 10)을 넣는다.
+5. 함수 func2에 (원하는 숫자, echoNumber, echoNumber)를 값으로 넣어서 호출한다.
+6. 타이머의 콜백함수를 사용해서, ONE, TWO, THREE를 1초씩 차례대로 프린트하여라.
+  (Hint: setTimeout 콜백 안에 setTimeout을 넣는 방식으로 만든다.)
+-->
+<html>
+  <body>
+    콜백
+  </body>
+</html>
+<script>
+  const func1 = (num, callback) => {
+    callback(num * 5);
+  };
+
+  const echoNumber = (num) => {
+    console.log(num);
+  };
+
+  func1(15, echoNumber);
+
+  const func2 = (num, callback1, callback2) => {
+    callback1(num * 10); 
+    callback2(num + 10); 
+  };
+
+  func2(2, echoNumber, echoNumber);
+
+  setTimeout(() => {
+    console.log('ONE');
+    setTimeout(() => {
+      console.log('TWO');
+      setTimeout(() => {
+        console.log('THREE');
+      }, 1000);
+    }, 1000);
+  }, 1000);
+</script>
